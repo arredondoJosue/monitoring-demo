@@ -14,20 +14,28 @@
         <input type="text" placeholder="Type name here"/>
         <button>Add Student</button>
     </form>
-    <section></section>
+    <section>
+        <div>
+            <p>Sample Student Card</p>
+        </div>
+    </section>
     <script>
         const addForm = document.querySelector('form')
         const nameInput = document.querySelector('input')
         const container = document.querySelector('section')
+        const card = document.querySelector('div')
 
         function submitHandler(e){
             e.preventDefault()
             axios.post('/api/student', {name: nameInput.value, })
                 .then(res => {
                     container.innerHTML = ''
+                    card.innerHTML = ''
                     nameInput.value = ''
 
                     res.data.forEach(studentName => {
+                        card.innerHTML += `<p>${studentName}</p>`
+                        
                         container.innerHTML += `<p>${studentName}</p>`
                     })
                 })
