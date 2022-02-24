@@ -43,10 +43,12 @@ app.post('/api/student', (req, res)=>{
         rollbar.error('student already exists')
         res.status(400).send('that student already exists')
     }
+
+
     try {
         fakeFunction()
     } catch (err) {
-        rollbar.critical('this is a critial error');
+        rollbar.critical(err);
     }
 
     try{
