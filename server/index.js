@@ -46,7 +46,7 @@ app.post('/api/student', (req, res)=>{
     try {
         fakeFunction()
     } catch (err) {
-        console.critical(err);
+        rollbar.critical(err);
     }
 
 })
