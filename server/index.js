@@ -34,7 +34,7 @@ app.post('/api/student', (req, res)=>{
 
     if(index === -1 && name !== ''){
         students.push(name)
-        rollbar.log('Student added successfully', {author: 'Scott', type: 'manual entry'})
+        rollbar.log('Student added successfully', {author: 'Josue', type: 'manual entry'})
         res.status(200).send(students)
     } else if (name === ''){
         rollbar.error('No name given')
@@ -42,6 +42,11 @@ app.post('/api/student', (req, res)=>{
     } else {
         rollbar.error('student already exists')
         res.status(400).send('that student already exists')
+    }
+    try {
+        fakeFunction()
+    } catch (err) {
+        console.critical(err);
     }
 
 })
