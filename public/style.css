@@ -24,6 +24,12 @@ section {
     padding: 10px
 }
 
+.delete{
+    border-radius: 50%;
+    background-color: none;
+    border: none;
+}
+
 div {
     border: 1px solid black;
     border-radius: 6px;
