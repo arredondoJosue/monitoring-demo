@@ -15,7 +15,10 @@ p {
 }
 
 section {
-    display: grid;
-    grid-template-columns: max-content;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 6px;
     background-color: lightslategrey;
+    justify-content: center;
 }
