@@ -46,7 +46,13 @@ app.post('/api/student', (req, res)=>{
     try {
         fakeFunction()
     } catch (err) {
-        rollbar.critical(err);
+        rollbar.critical('this is a critial error');
+    }
+
+    try{
+        anotherFake()
+    } catch (error) {
+        rollbar.warning('This is a warning')
     }
 
 })
