@@ -30,11 +30,11 @@
             axios.post('/api/student', {name: nameInput.value, })
                 .then(res => {
                     container.innerHTML = ''
-                    card.innerHTML = ''
+                    // card.innerHTML = ''
                     nameInput.value = ''
 
                     res.data.forEach(studentName => {
-                        card.innerHTML += `<p>${studentName}</p>`
+                        card.innerHTML += `<p>${studentName}</p><button>X</button>`
                         
                         // container.innerHTML += `<p>${studentName}</p>`
                     })
